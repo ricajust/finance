@@ -6,12 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
-import { MasksPipe } from './shared/pipes/masks.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MasksPipe
+    AppComponent
   ],
   imports: [
     AppRoutingModule,
