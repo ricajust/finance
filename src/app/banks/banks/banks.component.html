@@ -1,1 +1,14 @@
-<p>banks works!</p>
+<div class="container-banks-cards">
+  <mat-card class="bank-card" *ngFor="let bank of banks">
+    <div>
+      <mat-card-title>{{bank.name}}</mat-card-title>
+      <mat-card-subtitle>{{bank.ispb}}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{bank.fullName}}</p>
+      </mat-card-content>
+    </div>
+    <mat-card-actions class="cards-actions-container">
+      <button mat-button>Mais detalhes</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
