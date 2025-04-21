@@ -29,7 +29,7 @@
           <li><strong>Nome comencial:</strong> {{broker.nome_comercial}}</li>
           <li><strong>Código CVM:</strong> {{broker.codigo_cvm}}</li>
           <li><strong>E-mail:</strong> {{broker.email}}</li>
-          <li><strong>Telefone:</strong> {{broker.telefone}}</li>
+          <li><strong>Telefone:</strong> {{broker.telefone | masks: "phone"}}</li>
         </ul>
         <h3>Endereço</h3>
         <ul>
@@ -45,10 +45,10 @@
         <ul>
           <li><strong>Tipo:</strong> {{broker.type}}</li>
           <li><strong>Status:</strong> {{broker.status}}</li>
-          <li><strong>Data registro:</strong> {{broker.data_registro}}</li>
-          <li><strong>Data início situação:</strong> {{broker.data_inicio_situacao}}</li>
-          <li><strong>Patrimonio líquido:</strong> {{broker.valor_patrimonio_liquido}}</li>
-          <li><strong>Data patrimonio:</strong> {{broker.data_patrimonio_liquido}}</li>
+          <li><strong>Data registro:</strong> {{broker.data_registro | masks: "date"}}</li>
+          <li><strong>Data início situação:</strong> {{broker.data_inicio_situacao | masks: "date"}}</li>
+          <li><strong>Patrimonio líquido:</strong> {{broker.valor_patrimonio_liquido | masks: "currency"}}</li>
+          <li><strong>Data patrimonio:</strong> {{broker.data_patrimonio_liquido | masks: "date"}}</li>
         </ul>
       </div>
     </mat-expansion-panel>
