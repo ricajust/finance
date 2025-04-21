@@ -13,11 +13,11 @@ export class BanksComponent implements OnInit {
   constructor(private readonly banksService: BanksService) { }
 
   ngOnInit(): void {
-    this.checkAndLoadLocalStorage();
+    this.getAllBanks();
   }
 
-  checkAndLoadLocalStorage() {
-    let item = localStorage.getItem("banks");
+  getAllBanks() {
+    const item = localStorage.getItem("banks");
     if (!item) {
       this.banksService
         .getBanks()

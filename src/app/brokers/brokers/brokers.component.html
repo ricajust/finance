@@ -1,1 +1,56 @@
-<p>brokers works!</p>
+<div class="container-brokers-cards">
+  <mat-accordion class="broker-panel-container">
+    <!-- <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          This is the expansion title
+        </mat-panel-title>
+        <mat-panel-description>
+          This is a summary of the content
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>This is the primary content of the panel.</p>
+    </mat-expansion-panel> -->
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+      class="broker-panel"
+      *ngFor="let broker of brokers">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{broker.nome_social}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="broker-panel-content">
+        <h3>Dados</h3>
+        <ul>
+          <li><strong>CNPJ:</strong> {{broker.cnpj}}</li>
+          <li><strong>Nome social:</strong> {{broker.nome_social}}</li>
+          <li><strong>Nome comencial:</strong> {{broker.nome_comercial}}</li>
+          <li><strong>Código CVM:</strong> {{broker.codigo_cvm}}</li>
+          <li><strong>E-mail:</strong> {{broker.email}}</li>
+          <li><strong>Telefone:</strong> {{broker.telefone}}</li>
+        </ul>
+        <h3>Endereço</h3>
+        <ul>
+          <li><strong>Logradouro:</strong> {{broker.logradouro}}</li>
+          <li><strong>Complemento:</strong> {{broker.complemento}}</li>
+          <li><strong>Bairro:</strong> {{broker.bairro}}</li>
+          <li><strong>Município:</strong> {{broker.municipio}}</li>
+          <li><strong>Estado:</strong> {{broker.uf}}</li>
+          <li><strong>Pais:</strong> {{broker.pais}}</li>
+          <li><strong>CEP:</strong> {{broker.cep}}</li>
+        </ul>
+        <h3>Histórico</h3>
+        <ul>
+          <li><strong>Tipo:</strong> {{broker.type}}</li>
+          <li><strong>Status:</strong> {{broker.status}}</li>
+          <li><strong>Data registro:</strong> {{broker.data_registro}}</li>
+          <li><strong>Data início situação:</strong> {{broker.data_inicio_situacao}}</li>
+          <li><strong>Patrimonio líquido:</strong> {{broker.valor_patrimonio_liquido}}</li>
+          <li><strong>Data patrimonio:</strong> {{broker.data_patrimonio_liquido}}</li>
+        </ul>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
