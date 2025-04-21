@@ -17,16 +17,17 @@ export class BanksComponent implements OnInit {
   }
 
   checkAndLoadLocalStorage() {
-    let result = JSON.parse(localStorage.getItem("banks") ?? "");
-    if (result.length === 0) {
+    let item = localStorage.getItem("banks");
+    if (!item) {
       this.banksService
         .getBanks()
         .subscribe(response => {
-          localStorage.setItem("banks", JSON.stringify(response));
+          const data = {value: response, expiration: Date.now() + 40000 };
+          localStorage.setItem("banks", JSON.stringify(data));
           this.banks = response;
         });
     } else {
-      this.banks = result;
+      this.banks = item ? JSON.parse(item).value : [];
     }
   }
 }
