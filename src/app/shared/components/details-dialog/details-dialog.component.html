@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Cotação do dia</h1>
+<div mat-dialog-content>
+
+  <ul *ngFor="let elem of data">
+    <p><strong>Tipo de Boletim: {{elem.tipo_boletim}}</strong><br/>
+    <em>{{elem.data_hora_cotacao | masks: "dateTime"}}</em></p>
+    <li><strong>Paridade de Compra:</strong> R$ {{elem.paridade_compra}}</li>
+    <li><strong>Paridade de Venda:</strong> R$ {{elem.paridade_venda}}</li>
+    <li><strong>Cotação de Compra:</strong> R$ {{elem.cotacao_compra}}</li>
+    <li><strong>Cotação de Compra:</strong> R$ {{elem.cotacao_venda}}</li>
+  </ul>
+
+</div>
+<div mat-dialog-actions color="primary">
+  <button mat-button mat-dialog-close>Fechar</button>
+</div>

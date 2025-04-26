@@ -2,20 +2,20 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { MaterialModule } from '../shared/material/material.module';
-import { MasksPipe } from '../shared/pipes/masks.pipe';
+import { SharedModule } from '../shared/shared.module';
 import { BrokersRoutingModule } from './brokers-routing.module';
 import { BrokersComponent } from './brokers/brokers.component';
 
 
 @NgModule({
   declarations: [
-    BrokersComponent,
-    MasksPipe
+    BrokersComponent
   ],
   imports: [
     CommonModule,
     BrokersRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class BrokersModule { }

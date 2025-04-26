@@ -13,6 +13,8 @@ export class MasksPipe implements PipeTransform {
         return this.currencyFormatter(value);
       case "date":
         return this.dateFormatter(value);
+      case "dateTime":
+        return this.dateTimeFormatter(value);
 
       default:
         console.log("Formato de máscara inválido!");
@@ -46,5 +48,13 @@ export class MasksPipe implements PipeTransform {
   dateFormatter(value: string): string {
     const [year, mounth, day] = value.split("-");
     return `${day}/${mounth}/${year}`;
+  }
+
+  dateTimeFormatter(value: string): string {//"2025-04-14 10:10:30.518"
+    let [date, time] = value.split(" ");
+    [time] = time.split(".");
+    const [year, mounth, day] = date.split("-");
+    const [hour, min, sec] = time.split(":");
+    return `${day}/${mounth}/${year} | ${hour}:${min}:${sec}`;
   }
 }
